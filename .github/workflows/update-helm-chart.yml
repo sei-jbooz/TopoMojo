@@ -18,7 +18,7 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_KEY }}
-          owner: cmu-sei
+          owner: sei-jbooz
           repositories: helm-charts
 
       - name: Update Helm chart
