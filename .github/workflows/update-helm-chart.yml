@@ -26,7 +26,7 @@ jobs:
         with:
           app_name: TopoMojo API
           release_tag: ${{ github.event.release.tag_name }}
-          chart_file: chars/topomojo/charts/topomojo-api/Chart.yaml
+          chart_file: charts/topomojo/charts/topomojo-api/Chart.yaml
           parent_chart_file: charts/topomojo/Chart.yaml
           helm_repo: sei-jbooz/helm-charts
           helm_repo_token: ${{ steps.helm_token.outputs.token }}
