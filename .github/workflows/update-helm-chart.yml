@@ -20,7 +20,7 @@ jobs:
           repositories: helm-charts
 
       - name: Update Helm chart
-        uses: crucible/crucible-github-actions/actions/update-helm-chart@main
+        uses: sei-jbooz/Crucible-Github-Actions/actions/update-helm-chart@main
         with:
           app_name: TopoMojo API
           release_tag: ${{ github.event.release.tag_name }}
