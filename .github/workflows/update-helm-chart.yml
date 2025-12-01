@@ -14,3 +14,4 @@ jobs:
           github_app_name: TopoMojo API
           chart_file: charts/topomojo/charts/topomojo-api/Chart.yaml
           parent_chart_file: charts/topomojo/Chart.yaml
+          helm_chart_repo: sei-jbooz/helm-charts
