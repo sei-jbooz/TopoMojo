@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update Helm chart
-        uses: sei-jbooz/Crucible-Github-Actions/actions/update-helm-chart@update-helm-chart-v2
+        uses: sei-jbooz/Crucible-Github-Actions/actions/update-helm-chart@update-helm-chart-v3
         with:
           github_app_name: TopoMojo API
+          github_app_id: ${{ secrets.CRUCIBLE_HELM_UPDATE_APP_ID }}
+          github_app_private_key: ${{ secrets.CRUCIBLE_HELM_UPDATE_PRIVATE_KEY }}
           chart_file: charts/topomojo/charts/topomojo-api/Chart.yaml
           parent_chart_file: charts/topomojo/Chart.yaml
           helm_chart_repo: sei-jbooz/helm-charts
