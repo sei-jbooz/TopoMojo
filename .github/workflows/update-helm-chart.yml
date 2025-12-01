@@ -7,26 +7,10 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    environment:
-      name: default
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Create GitHub App token for helm-charts
-        id: helm_token
-        uses: actions/create-github-app-token@v1
-        with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_KEY }}
-          owner: sei-jbooz
-          repositories: helm-charts
-
       - name: Update Helm chart
-        uses: sei-jbooz/Crucible-Github-Actions/actions/update-helm-chart@main
+        uses: cmu-sei/Crucible-Github-Actions/actions/update-helm-chart@v2
         with:
-          app_name: TopoMojo API
-          release_tag: ${{ github.event.release.tag_name }}
+          github_app_name: TopoMojo API
           chart_file: charts/topomojo/charts/topomojo-api/Chart.yaml
           parent_chart_file: charts/topomojo/Chart.yaml
-          helm_repo: sei-jbooz/helm-charts
-          helm_repo_token: ${{ steps.helm_token.outputs.token }}
